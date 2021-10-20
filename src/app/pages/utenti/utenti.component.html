@@ -1,0 +1,23 @@
+<div class="container-fluid">
+	<div class="row justify-content-md-center">
+		<div class="card-container col-12 col-md-8">
+			<mat-card class="mat-elevation-z8">
+				<div class="container-fluid">
+					<div class="buttons">
+						<button mat-raised-button color="primary" (click)="nuovo()">
+							<mat-icon [inline]="true" class="button-icon">add</mat-icon>
+							<mat-label>Nuovo utente</mat-label>
+						</button>
+					</div>
+				</div>
+				<app-table #table>
+					<app-column data="username" title="Nome username" [width]="300"></app-column>
+					<app-column data="roles" title="Permessi"></app-column>
+					<app-column data="delete" type="button" [width]="50" (click)="deleteRow($event)"></app-column>
+					<app-column data="password" type="button" [width]="50" (click)="modificaPassword($event)"></app-column>
+					<app-column data="edit" type="button" [width]="50" (click)="modifica($event)"></app-column>
+				</app-table>
+			</mat-card>
+		</div>
+	</div>
+</div>

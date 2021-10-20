@@ -1,0 +1,24 @@
+
+<div class="container-fluid">
+	<div class="filters row">
+		<h2>Filtri di ricerca</h2>
+		<mat-form-field appearance="outline" class="field-cursor-text col-12 col-md-6">
+			<mat-label>Codice</mat-label>
+			<input matInput [(ngModel)]="filter.codice" name="codice" (keyup)="applyFilters()" placeholder="Codice">
+		</mat-form-field>
+		<mat-form-field appearance="outline" class="field-cursor-text col-12 col-md-6">
+			<mat-label>Descrizione</mat-label>
+			<input matInput [(ngModel)]="filter.descrizione" name="descrizione" (keyup)="applyFilters()" placeholder="Descrizione">
+		</mat-form-field>
+	</div>
+</div>
+<div class="articoli-container">
+	<div class="table-container">
+		<app-table #table>
+			<app-column data="unitaDiMisura" title="UM" [width]="75"></app-column>
+			<app-column title="Codice"></app-column>
+			<app-column title="Descrizione"></app-column>
+			<app-column data="check" type="button" [width]="50" (click)="select($event)"></app-column>
+		</app-table>
+	</div>
+</div>

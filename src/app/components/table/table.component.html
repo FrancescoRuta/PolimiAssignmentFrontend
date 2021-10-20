@@ -1,0 +1,56 @@
+<div class="table-container">
+	<mat-table [dataSource]="dataSource" matSort #table>
+		<ng-template ngFor let-column [ngForOf]="columns" let-i="index">
+			<ng-container matColumnDef="{{column.data}}" *ngIf="column.type == 'text'">
+				<mat-header-cell
+					*matHeaderCellDef
+					mat-sort-header
+					class="no-user-select"
+					[style]="column.width != null ? 'flex: 0 0 ' + column.width + 'px;' : ''"
+				>
+					{{column.title ?? ""}}
+				</mat-header-cell>
+				<mat-cell
+					*matCellDef="let row"
+					[style]="column.width != null ? 'flex: 0 0 ' + column.width + 'px;' : ''"
+				>
+					{{ row | getObjectProp: column.data }}
+				</mat-cell>
+			</ng-container>
+			<ng-container matColumnDef="{{column.data}}" *ngIf="column.type == 'datetime'">
+				<mat-header-cell
+					*matHeaderCellDef
+					mat-sort-header
+					class="no-user-select"
+					[style]="column.width != null ? 'flex: 0 0 ' + column.width + 'px;' : ''"
+				>
+					{{column.title ?? ""}}
+				</mat-header-cell>
+				<mat-cell
+					*matCellDef="let row"
+					[style]="column.width != null ? 'flex: 0 0 ' + column.width + 'px;' : ''"
+				>
+					{{ (row | getObjectProp: column.data) | date: "dd/MM/yyyy HH:mm:ss" }}
+				</mat-cell>
+			</ng-container>
+			<ng-container matColumnDef="{{column.data}}" *ngIf="column.type == 'button'">
+				<mat-header-cell
+					*matHeaderCellDef
+					class="no-user-select"
+					[style]="column.width != null ? 'flex: 0 0 ' + column.width + 'px;' : ''"
+				>
+					{{column.title ?? ""}}
+				</mat-header-cell>
+				<mat-cell
+					*matCellDef="let row; let rowIndex = index"
+					[style]="column.width != null ? 'flex: 0 0 ' + column.width + 'px;' : ''"
+				>
+					<mat-icon (click)="btnClick(i, rowIndex, row)" class="table-btn">{{column.data}}</mat-icon>
+				</mat-cell>
+			</ng-container>
+		</ng-template>
+		<mat-header-row *matHeaderRowDef="keys; sticky: true"></mat-header-row>
+		<mat-row *matRowDef="let row; columns: keys;"></mat-row>
+	</mat-table>
+	<mat-paginator [pageSizeOptions]="[25, 50, 75, 100]"></mat-paginator>
+</div>

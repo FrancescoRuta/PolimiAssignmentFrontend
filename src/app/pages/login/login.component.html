@@ -1,0 +1,33 @@
+<div class="main-div" *ngIf="!loggedIn">
+	<div class="diagonal-box"></div>
+	<mat-card class="card">
+		<div class="card-header login-box-header">
+			<img class="logo" src="assets/img/logo.png">
+		</div>
+		<mat-card-content class="card-content">
+			<table class="form-table" cellspacing="0">
+				<tr>
+					<td>
+						<mat-form-field class="field-cursor-text full-width" appearance="outline">
+							<mat-icon matPrefix class="icon">person</mat-icon>
+							<input matInput placeholder="Username" [(ngModel)]="username" name="username" required autocomplete="off" (keyup.enter)="checkLogin()">
+						</mat-form-field>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<mat-form-field class="field-cursor-text full-width" appearance="outline">
+							<mat-icon matPrefix class="icon">lock</mat-icon>
+							<input matInput placeholder="Password" [(ngModel)]="password" type="password" name="password" required (keyup.enter)="checkLogin()">
+						</mat-form-field>
+					</td>
+				</tr>
+			</table>
+		</mat-card-content>
+		<mat-card-actions class="card-actions">
+			<button mat-raised-button (click)="checkLogin()" color="primary" class="login-button">
+				<mat-label>Login</mat-label>
+			</button>
+		</mat-card-actions>
+	</mat-card>
+</div>

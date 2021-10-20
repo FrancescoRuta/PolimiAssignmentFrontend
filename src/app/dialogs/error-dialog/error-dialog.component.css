@@ -1,0 +1,4 @@
+.btn-container {
+	justify-content: flex-end;
+	display: flex;
+}

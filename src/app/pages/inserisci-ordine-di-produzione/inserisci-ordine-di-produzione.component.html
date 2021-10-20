@@ -1,0 +1,41 @@
+<mat-card class="mat-elevation-z8">
+	<mat-stepper [linear]="true" (selectionChange)="change($event)" #stepper>
+		<mat-step [stepControl]="articoloSelezionatoControl">
+			<ng-template matStepLabel>Seleziona articolo</ng-template>
+			<app-seleziona-articolo (selected)="selectArticolo($event)" [apiGet]="apiGetArticoli"></app-seleziona-articolo>
+		</mat-step>
+		<mat-step>
+			<ng-template matStepLabel>Dati di produzione</ng-template>
+			<div class="container-fluid d-flex justify-content-center">
+				<div class="row">
+					<div class="col-12">
+						<div class="container-fluid">
+							<mat-form-field appearance="outline" class="field-cursor-pointer col-12">
+								<mat-label>Impianto di produzione</mat-label>
+								<mat-select [(ngModel)]="data.impiantoDiProduzione" name="impiantoDiProduzione">
+									<mat-option *ngFor="let item of impiantiArticolo" [value]="item">{{ item.nome }}</mat-option>
+								</mat-select>
+							</mat-form-field>
+							<mat-form-field appearance="outline" class="field-cursor-pointer col-12">
+								<mat-label>Distinta base</mat-label>
+								<mat-select [(ngModel)]="data.distintaBase" name="distintaBase">
+									<mat-option *ngFor="let item of distinteBase" [value]="item">{{ item.descrizione }}</mat-option>
+								</mat-select>
+							</mat-form-field>
+							<mat-form-field appearance="outline" class="field-cursor-text col-12">
+								<mat-label>QTA da produrre</mat-label>
+								<input type="number" matInput name="qtaProdotta" placeholder="QTA da produrre" [(ngModel)]="data.qtaProdotta">
+							</mat-form-field>
+							<div class="d-flex justify-content-end">
+								<button mat-raised-button color="primary" (click)="save()">
+									<mat-icon [inline]="true" class="button-icon">save</mat-icon>
+									<mat-label>Salva</mat-label>
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</mat-step>
+	</mat-stepper>
+</mat-card>

@@ -1,0 +1,11 @@
+.mat-header-cell {
+	background: #e2e7ec;
+}
+.table-container {
+	margin-left: -16px;
+	margin-right: -16px;
+}
+.table-btn {
+	cursor: pointer;
+	user-select: none;
+}

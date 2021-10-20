@@ -1,0 +1,12 @@
+<div class="relative-div">
+	<mat-form-field appearance="outline" class="field-cursor-text col-12">
+		<mat-label>Quantità</mat-label>
+		<input matInput type="number" name="qta" placeholder="Quantità" [(ngModel)]="data.qta">
+	</mat-form-field>
+	<div class="btn-container">
+		<button mat-raised-button color="primary" (click)="save()">
+			<mat-icon [inline]="true" class="button-icon">save</mat-icon>
+			<mat-label>Salva</mat-label>
+		</button>
+	</div>
+</div>

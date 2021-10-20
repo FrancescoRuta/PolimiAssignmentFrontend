@@ -1,0 +1,31 @@
+<div class="relative-div">
+	<h1>Distinta base</h1>
+	<mat-form-field appearance="outline" class="field-cursor-text col-12">
+		<mat-label>Descrizione</mat-label>
+		<input matInput name="descrizione" placeholder="Descrizione" [(ngModel)]="data.descrizione">
+	</mat-form-field>
+	<div class="articoli-container">
+		<div class="buttons">
+			<button mat-raised-button color="primary" (click)="inserisciArticoloDistintaBase()">
+				<mat-icon [inline]="true" class="button-icon">add</mat-icon>
+				<mat-label>Aggiungi articolo</mat-label>
+			</button>
+		</div>
+		<div class="table-container">
+			<app-table #table>
+				<app-column data="articolo.unitaDiMisura" title="UM" [width]="75"></app-column>
+				<app-column title="QTA" [width]="90"></app-column>
+				<app-column data="articolo.codice" title="Codice" [width]="200"></app-column>
+				<app-column data="articolo.descrizione" title="Descrizione"></app-column>
+				<app-column data="delete" type="button" [width]="50" (click)="eliminaArticolo($event)"></app-column>
+				<app-column data="edit" type="button" [width]="50" (click)="modificaQtaArticolo($event)"></app-column>
+			</app-table>
+		</div>
+	</div>
+	<div mat-dialog-actions>
+		<button class="bottom-right-absolute" mat-raised-button color="primary" (click)="save()">
+			<mat-icon [inline]="true" class="button-icon">save</mat-icon>
+			<mat-label>Salva</mat-label>
+		</button>
+	</div>
+</div>

@@ -1,0 +1,27 @@
+<div class="container-fluid">
+	<div class="buttons">
+		<button mat-raised-button color="primary" (click)="router.navigate(['/produzione/inserisci-ordine-di-produzione']);">
+			<mat-icon [inline]="true" class="button-icon">add</mat-icon>
+			<mat-label>Nuovo ordine di produzione</mat-label>
+		</button>
+	</div>
+	<div class="filters row">
+		<h2>Filtri di ricerca</h2>
+		<mat-form-field appearance="outline" class="field-cursor-text col-md-3">
+			<mat-label>Codice</mat-label>
+			<input matInput [(ngModel)]="filter.codice" name="codice" (keyup)="applyFilters()" placeholder="Codice">
+		</mat-form-field>
+		<mat-form-field appearance="outline" class="field-cursor-text col-md-3">
+			<mat-label>Descrizione</mat-label>
+			<input matInput [(ngModel)]="filter.descrizione" name="descrizione" (keyup)="applyFilters()" placeholder="Descrizione">
+		</mat-form-field>
+	</div>
+</div>
+<app-table #table>
+	<app-column data="qtaProdotta" title="QTA" [width]="90"></app-column>
+	<app-column data="articoloProdotto.codice" title="Codice" [width]="250"></app-column>
+	<app-column data="articoloProdotto.descrizione" title="Descrizione"></app-column>
+	<app-column data="impiantoDiProduzione.nome" title="Impianto" [width]="300"></app-column>
+	<app-column data="delete" type="button" [width]="50" (click)="deleteRow($event)"></app-column>
+	<app-column data="edit" type="button" [width]="50" (click)="modifica($event)"></app-column>
+</app-table>

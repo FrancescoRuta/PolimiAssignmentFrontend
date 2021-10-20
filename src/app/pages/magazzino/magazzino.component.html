@@ -1,0 +1,22 @@
+<mat-card class="mat-elevation-z8">
+	<div class="container-fluid">
+		<div class="row">
+			<h2>Filtri di ricerca</h2>
+			<mat-form-field appearance="outline" class="field-cursor-text col-md-3">
+				<mat-label>Codice</mat-label>
+				<input matInput [(ngModel)]="filter.codice" name="codice" (keyup)="applyFilters()" placeholder="Codice">
+			</mat-form-field>
+			<mat-form-field appearance="outline" class="field-cursor-text col-md-3">
+				<mat-label>Descrizione</mat-label>
+				<input matInput [(ngModel)]="filter.descrizione" name="descrizione" (keyup)="applyFilters()" placeholder="Descrizione">
+			</mat-form-field>
+		</div>
+	</div>
+	<app-table #table>
+		<app-column data="unitaDiMisura" title="UM" [width]="75"></app-column>
+		<app-column title="QTA giacenza" [width]="100"></app-column>
+		<app-column title="Codice" [width]="250"></app-column>
+		<app-column title="Descrizione"></app-column>
+		<app-column data="auto_fix_high" type="button" [width]="50" (click)="modifica($event)"></app-column>
+	</app-table>
+</mat-card>

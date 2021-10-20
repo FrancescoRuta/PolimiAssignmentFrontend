@@ -1,0 +1,9 @@
+<p>{{message}}</p>
+<div class="btn-container">
+	<button mat-raised-button color="primary" class="button" (click)="dialogRef.close(false)">
+		<mat-label>Annulla</mat-label>
+	</button>
+	<button mat-raised-button color="warn" (click)="dialogRef.close(true)">
+		<mat-label>Elimina</mat-label>
+	</button>
+</div>

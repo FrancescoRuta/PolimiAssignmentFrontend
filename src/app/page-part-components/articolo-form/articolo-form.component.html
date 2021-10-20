@@ -1,0 +1,69 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="card-container col-12 col-md-6 ">
+			<mat-card class="mat-elevation-z8">
+				<h1>Dati</h1>
+				<form #form="ngForm">
+					<div class="container-fluid">
+						<div class="row">
+							<mat-form-field appearance="outline" class="field-cursor-text col-12 col-md-6">
+								<mat-label>Codice</mat-label>
+								<input matInput name="codice" placeholder="Codice" [(ngModel)]="data.codice">
+							</mat-form-field>
+							<mat-form-field appearance="outline" class="field-cursor-pointer col-12 col-md-6">
+								<mat-label>Unità di misura</mat-label>
+								<mat-select [(ngModel)]="data.unitaDiMisura" name="unitaDiMisura">
+									<mat-option [value]="'NR'">Nr</mat-option>
+									<mat-option [value]="'KG'">Kg</mat-option>
+								</mat-select>
+							</mat-form-field>
+						</div>
+						<div class="row">
+							<mat-form-field appearance="outline" class="field-cursor-text col-12">
+								<mat-label>Descrizione</mat-label>
+								<input matInput name="descrizione" placeholder="Descrizione"
+									[(ngModel)]="data.descrizione">
+							</mat-form-field>
+						</div>
+						<div class="row">
+							<mat-form-field appearance="outline" class="field-cursor-text col-12">
+								<mat-label>Descrizione estesa</mat-label>
+								<textarea matInput name="descrizioneEstesa" rows="6" placeholder="Descrizione estesa"
+									[(ngModel)]="data.descrizioneEstesa"></textarea>
+							</mat-form-field>
+						</div>
+					</div>
+				</form>
+			</mat-card>
+		</div>
+		<div class="card-container col-12 col-md-6 ">
+			<mat-card class="mat-elevation-z8 height-adapt">
+				<div class="relative-div">
+					<div class="table-card-header"><h1>Distinte base</h1></div>
+					<div class="table-card-body">
+						<div class="relative-div">
+							<div class="buttons">
+								<button mat-raised-button color="primary" (click)="inserisciDistintaBase()">
+									<mat-icon [inline]="true" class="button-icon">add</mat-icon>
+									<mat-label>Aggiungi distinta base</mat-label>
+								</button>
+							</div>
+							<div class="table-container">
+								<app-table #table>
+									<app-column title="Descrizione"></app-column>
+									<app-column data="delete" type="button" [width]="50"
+										(click)="eliminaDistintaBase($event)"></app-column>
+									<app-column data="edit" type="button" [width]="50"
+										(click)="modificaDistintaBase($event)"></app-column>
+								</app-table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</mat-card>
+		</div>
+	</div>
+</div>
+<button mat-fab color="primary" matTooltip="Salva" class="bottom-right-fixed" (click)="callSave()">
+	<mat-icon>save</mat-icon>
+</button>

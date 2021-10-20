@@ -1,0 +1,13 @@
+<mat-card class="mat-elevation-z8 card">
+	<mat-tab-group (selectedTabChange)="onTabChanged($event);" dynamicHeight>
+		<mat-tab label="Ordini di produzione">
+			<app-ordini-di-produzione></app-ordini-di-produzione>
+		</mat-tab>
+		<mat-tab label="Produzioni in corso">
+			<app-produzioni-in-corso></app-produzioni-in-corso>
+		</mat-tab>
+		<mat-tab label="Produzioni effettuate">
+			<app-produzioni-effettuate></app-produzioni-effettuate>
+		</mat-tab>
+	</mat-tab-group>
+</mat-card>

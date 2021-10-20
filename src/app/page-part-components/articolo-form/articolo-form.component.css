@@ -1,0 +1,39 @@
+.buttons {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 64px;
+	padding-left: 16px;
+	padding-right: 16px;
+}
+.table-container {
+	position: absolute;
+	bottom: 16px;
+	left: 0;
+	right: 0;
+	top: 64px;
+	padding-left: 16px;
+	padding-right: 16px;
+	margin-left: -16px;
+	margin-right: -16px;
+	overflow: auto;
+}
+.height-adapt {
+	height: 100%;
+	min-height: 400px;
+}
+.table-card-header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 56px;
+}
+.table-card-body {
+	position: absolute;
+	top: 48px;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}

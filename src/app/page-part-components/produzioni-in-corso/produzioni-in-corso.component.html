@@ -1,0 +1,20 @@
+<div class="container-fluid">
+	<div class="filters row">
+		<h2>Filtri di ricerca</h2>
+		<mat-form-field appearance="outline" class="field-cursor-text col-md-3">
+			<mat-label>Codice</mat-label>
+			<input matInput [(ngModel)]="filter.codice" name="codice" (keyup)="applyFilters()" placeholder="Codice">
+		</mat-form-field>
+		<mat-form-field appearance="outline" class="field-cursor-text col-md-3">
+			<mat-label>Descrizione</mat-label>
+			<input matInput [(ngModel)]="filter.descrizione" name="descrizione" (keyup)="applyFilters()" placeholder="Descrizione">
+		</mat-form-field>
+	</div>
+</div>
+<app-table #table>
+	<app-column data="qtaProdotta" title="QTA" [width]="90"></app-column>
+	<app-column data="articoloProdotto.codice" title="Codice" [width]="250"></app-column>
+	<app-column data="articoloProdotto.descrizione" title="Descrizione"></app-column>
+	<app-column data="impiantoDiProduzione.nome" title="Impianto" [width]="300"></app-column>
+	<app-column type="datetime" title="Inizio produzione" [width]="250"></app-column>
+</app-table>

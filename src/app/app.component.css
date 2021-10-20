@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
+
+.main-container {
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	position: fixed;
+}
+.sidebar {
+	top: 0;
+	bottom: 0;
+	left: 0;
+	position: absolute;
+	width: 250px;
+	background-color: #ffffff;
+}
+.sidebar-logo {
+	height: 96px;
+	width: 50%;
+	margin: auto;
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-image: url("../assets/img/logo.png");
+}
+.sidebar-content {
+	position: absolute;
+	top: 112px;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	overflow: auto;
+}
+.page {
+	top: 0;
+	bottom: 0;
+	left: 250px;
+	right: 0;
+	position: absolute;
+	overflow: auto;
+	background-color: #f5f6fc;
+}
+.header {
+	background: linear-gradient(87deg, #142646 0, #3a4b68 100%);
+	height: 380px;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+.page-content-bg {
+	display: inline-block;
+	position: absolute;
+	top: 150px;
+	left: 64px;
+	right: 64px;
+}
+.page-content {
+	display: inline-block;
+	position: relative;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+.page-content-bg::after {
+	content: "";
+	display: block;
+	height: 64px;
+	width: 100%;
+}
+.page-title {
+	cursor: default;
+	user-select: none;
+	font-size: 1.4em;
+	position: absolute;
+	display: flex;
+	top: 24px;
+	left: 48px;
+	z-index: 99;
+	color: #ffffff;
+	font-weight: 600;
+	font-family: "Open Sans", sans-serif;
+	letter-spacing: 2px;
+	height: 42px;
+	line-height: 42px;
+}
+.logout-btn {
+	cursor: pointer;
+	user-select: none;
+	position: absolute;
+	display: inline-block;
+	top: 24px;
+	right: 48px;
+	z-index: 99;
+	color: #ffffff;
+	font-weight: 600;
+	font-family: "Open Sans", sans-serif;
+	letter-spacing: 1px;
+	height: 42px;
+}
+.logout-text,.change-password-text {
+	height: 100%;
+	margin-left: 12px;
+	vertical-align: middle;
+	display: inline;
+}
+.logout-icon,.change-password-icon {
+	font-size: 20px !important;
+}
+.menu-icon {
+	font-size: 20px !important;
+	color: #4f4f4f;
+}
+.menu-label {
+	display: inline-block;
+	margin-left: 12px;
+	text-decoration: none;
+	color: inherit;
+}
+.menu-item {
+	position: relative;
+	font-size: 16px;
+	color: #777777;
+	display: flex;
+	padding-top: 12px;
+	padding-bottom: 12px;
+	padding-right: 16px;
+	padding-left: 16px;
+	cursor: pointer;
+	user-select: none;
+	overflow: none;
+	text-overflow: ellipsis;
+	align-items: center;
+	transition: color 0.2s;
+}
+.menu-item:hover {
+	color: #444444;
+}
+.menu-item.active {
+	color: #333333;
+}
+.menu-item:before {
+	content: '';
+	background-color: #18376b;
+	width: 0px;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	transition: width 0.2s;
+}
+.menu-item.active:before {
+	content: '';
+	width: 4px;
+}
+.goBackArrow {
+	margin-right: 16px;
+	cursor: pointer;
+}
+.change-password-btn-container {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	padding: 16px;
+	display: flex;
+	justify-content: center;
+}

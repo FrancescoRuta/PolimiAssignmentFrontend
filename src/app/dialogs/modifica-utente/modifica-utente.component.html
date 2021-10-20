@@ -1,0 +1,19 @@
+<div class="relative-div">
+	<mat-form-field appearance="outline" class="field-cursor-text col-12">
+		<mat-label>Username</mat-label>
+		<input matInput type="text" name="username" placeholder="Username" [(ngModel)]="data.username">
+	</mat-form-field>
+	<ul>
+		<li *ngFor="let r of roleList">
+			<mat-checkbox color="primary" [(ngModel)]="r.value">
+				{{r.title}}
+			</mat-checkbox>
+		</li>
+	</ul>
+	<div class="btn-container">
+		<button mat-raised-button color="primary" (click)="save()">
+			<mat-icon [inline]="true" class="button-icon">save</mat-icon>
+			<mat-label>Salva</mat-label>
+		</button>
+	</div>
+</div>
